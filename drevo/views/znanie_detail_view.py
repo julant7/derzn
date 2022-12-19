@@ -120,8 +120,30 @@ class ZnanieDetailView(DetailView):
         context['button'] = []
         if context['children_by_tr']:
             for relation, children in context['children_by_tr'].items():
-                if relation.name == 'Тест':
+
+                if relation.pk == 24:
                     context['button'].append(children)
+
+        # создает контекст, в котором "внуки" знания, если это знание - тест
+        if self.object.tz in Tz.objects.filter(name='Тест'):
+
+            context['all_answers_and_questions'] = {}
+            context['right_answer'] = {}
+            for relation_name, relations in context['rels']:
+
+                for item in relations:
+
+                    context['all_answers_and_questions'][str(item.rz)] = get_children_for_knowledge(
+                        item.rz).order_by('-pk')
+                    grandson = get_children_by_relation_type_for_knowledge(
+                        item.rz)
+
+                    for question, answer in grandson.items():
+                        if question.pk == 26:
+                            context['right_answer'][str(item.rz)] = answer
+            context['all_answers_and_questions'] = dict(sorted(context['all_answers_and_questions'].items(),
+                                                               key=lambda a: a, reverse=True))
+        
 
         labels = LabelFeedMessage.objects.all()
         context['labels'] = labels

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8b56e24-a53d-445a-99f4-2340a53fe448" name="Changes" comment="Задача 334">
-      <change afterPath="$PROJECT_DIR$/.env.sample" afterDir="false" />
+    <list default="true" id="b057d515-5f48-4e76-a4b6-d560c59ae50b" name="Changes" comment="Задача 334">
+      <change beforePath="$PROJECT_DIR$/drevo/forms/knowledge_create_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/drevo/forms/knowledge_create_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drevo/templates/drevo/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/drevo/templates/drevo/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drevo/templates/drevo/knowledge_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/drevo/templates/drevo/knowledge_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drevo/templates/drevo/knowledge_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/drevo/templates/drevo/knowledge_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drevo/views/knowledge_tp_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/drevo/views/knowledge_tp_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drevo/views/znanie_detail_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/drevo/views/znanie_detail_view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
