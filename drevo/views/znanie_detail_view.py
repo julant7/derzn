@@ -143,7 +143,6 @@ class ZnanieDetailView(DetailView):
                             context['right_answer'][str(item.rz)] = answer
             context['all_answers_and_questions'] = dict(sorted(context['all_answers_and_questions'].items(),
                                                                key=lambda a: a, reverse=True))
-        
 
         labels = LabelFeedMessage.objects.all()
         context['labels'] = labels
