@@ -44,6 +44,8 @@ from .views import (
     GroupKnowledgeStatisticsView,
     parameter_settings,
     znanie_attributes,
+    send_message_view,
+    messages_feed_view,
 )
 from .views import send_znanie, knowledge_feed_view
 from .views.expert_work.proposal_delete_view import ProposalDeleteView
@@ -187,6 +189,8 @@ urlpatterns = [
         knowledge_feed_view.delete_message,
         name="delete_message",
     ),
+    path("send-message/<int:id>", send_message_view.send_message, name = "send_message"),
+    path("messages-feed/", messages_feed_view.messages_feed, name = "messages_feed"),
     path("developer/", developer_view, name="developer_page"),
     path("znanie_create/", KnowledgeCreateView.as_view(), name="znanie_create"),
     path(
