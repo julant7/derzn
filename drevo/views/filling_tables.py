@@ -73,6 +73,7 @@ def filling_tables(request):
 
     return reverse("/drevo/")
 
+
 def get_contex_data(obj):
     """
     Получение всех таблиц, удовлетворяющих условию, а также атрибутов для создания знания
