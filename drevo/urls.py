@@ -21,7 +21,6 @@ from .views import (
     AuthorSearchView,
     TagSearchView,
     NewKnowledgeListView,
-    BrowsingHistoryListView,
     FavouritesView,
     FavouriteProcessView,
     QuestionExpertWorkPage,
@@ -52,6 +51,7 @@ from .views import (
     messages_feed_view,
 )
 from .views import send_znanie, knowledge_feed_view
+from .views.browsing_history import browsing_history
 from .views.expert_work.proposal_delete_view import ProposalDeleteView
 from .views.expert_work.views import (
     propose_answer,
@@ -107,6 +107,7 @@ urlpatterns = [
     path("filling_tables/", filling_tables, name="filling_tables"),
     path("show_new_znanie/", show_new_znanie, name="show_new_znanie"),
     path("my_knowledge_grade/", my_knowledge_grade, name="my_knowledge_grade"),
+    path("my_knowledge_grade/<int:id>/", my_knowledge_grade, name="my_knowledge_grade"),
     path("all_quizzes/", QuizListView.as_view(), name="all_quizzes"),
     path("quiz/<int:pk>", QuizDetailView.as_view(), name="quiz"),
     path("quiz/<int:pk>/quiz_result/", QuizResultAdd.as_view()),
@@ -123,7 +124,7 @@ urlpatterns = [
     path("new_knowledge/", NewKnowledgeListView.as_view(), name="new_knowledge"),
     path("search/author", AuthorSearchView.as_view(), name="search_author"),
     path("search/tag", TagSearchView.as_view(), name="search_tag"),
-    path("history/", BrowsingHistoryListView.as_view(), name="history"),
+    path("history/<int:id>/", browsing_history, name="history"),
     path("subscribe_to_author/<int:id>/", sub_by_author, name="subscribe_to_author"),
     path("subscription_by_tag/<int:id>/", sub_by_tag, name="subscription_by_tag"),
     path("favourites/", FavouritesView.as_view(), name="favourites"),
