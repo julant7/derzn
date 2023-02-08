@@ -7,13 +7,13 @@ from .comment_page_view import CommentPageView
 from .comment_send_view import CommentSendView
 from .drevo_list_view import DrevoListView
 from .drevo_view import DrevoView
-from .expert_work.proposal_delete_view import ProposalDeleteView
 from .knowledge_view import KnowledgeView
 from .expert_work.views import (
     QuestionExpertWorkPage,
     propose_answer,
     update_answer_proposal,
-    sub_answer_create_view
+    sub_answer_create_view,
+    ExpertProposalDeleteView
 )
 from .admin_interview_work.views import (
     AllInterviewView,
@@ -83,7 +83,6 @@ __all__ = [
     "znanie_attributes",
     'QuizListView',
     "QuizListView",
-    "ProposalDeleteView",
     "KnowledgeStatisticFormView",
     'QuizResultAdd',
     "GroupKnowledgeView",
@@ -95,4 +94,5 @@ __all__ = [
     "GroupKnowledgeStatisticsView",
     'parameter_settings',
     'sub_answer_create_view',
+    'ExpertProposalDeleteView',
 ]
