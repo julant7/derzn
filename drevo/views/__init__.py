@@ -24,7 +24,7 @@ from .admin_interview_work.views import (
 )
 from .favourite_processing_view import FavouriteProcessView
 from .favourites_view import FavouritesView
-from .filling_tables import filling_tables, get_rows_and_columns, znanie_attributes, show_new_znanie
+from .filling_tables import filling_tables, get_rows_and_columns, znanie_attributes, show_new_znanie, show_filling_tables_page
 from .friends_added_view import friends_added_view
 from .friends_view import friends_view
 from .glossary_list_view import GlossaryListView
@@ -69,6 +69,7 @@ __all__ = [
     "FavouritesView",
     "FavouriteProcessView",
     "filling_tables",
+    "show_filling_tables_page",
     "friends_view",
     "friends_added_view",
     "friends_invite_view",
