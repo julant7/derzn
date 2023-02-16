@@ -413,10 +413,8 @@
                                        id="favourites_link">Избранное</a>
                                     <a class="dropdown-item" href="{% url 'friends' %}" id="friends_link">Друзья</a>
                                     {% if user.expert.all %}
-
                                         <a class="dropdown-item" href="{% url 'my_interview' %}" id="my_interview_link">Мои интервью</a>
                                         <a class="dropdown-item" href="{% url 'filling_tables' %}" id="filling_tables">Наполнение таблиц</a>
-
                                     {% endif %}
                                     {% if user.is_staff %}
                                         <a class="dropdown-item" href="{% url 'all_interview' %}">Предложения экспертов</a>
@@ -519,7 +517,7 @@
       .then(data => {
           if (!data[0]) {
               filling_tables.remove()
-          }
+           }
       })
       .catch((error) => {
       console.log('Error:', error);

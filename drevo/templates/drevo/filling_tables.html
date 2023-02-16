@@ -164,7 +164,7 @@
         })
         .then(response => response.json())
         .then(data => {
-            $('#id_znanie').append(`<option id="${data[0]}" selected> ${data[1]} </option>`)
+            $('#id_znanie').append(`<option value="${data[0]}" id="${data[0]}" selected> ${data[1]} </option>`)
             $('#id_znanie').selectpicker('refresh')
             $('#id_znanie option:last').prop('selected', true)
             $('#id_znanie').selectpicker('refresh')

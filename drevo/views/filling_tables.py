@@ -96,9 +96,9 @@ def get_contex_data(obj, row_id, column_id):
             table_dict[zn.pk] = zn.name
 
     row_column_exist = False
-    for table_id, table_name in enumerate(table_dict):
-        if Relation.objects.filter(tr_id=row_id, bz_id=table_id).exists() and Relation.objects.filter(
-                tr_id=column_id, bz_id=table_id).exists():
+    for table, table_id in enumerate(table_dict):
+        if Relation.objects.filter(tr_id=row_id, bz_id=table_id, is_published=True).exists() and Relation.objects.filter(
+                tr_id=column_id, bz_id=table_id, is_published=True).exists():
             row_column_exist = True
 
     if not row_column_exist:
