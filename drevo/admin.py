@@ -13,6 +13,7 @@ from drevo.models.expert_category import CategoryExpert
 from drevo.models.knowledge_grade import KnowledgeGrade
 from .forms.relation_form import RelationAdminForm
 from drevo.models.knowledge_grade_scale import KnowledgeGradeScale
+from drevo.models.knowledge_grade_color import KnowledgeGradeColor
 from drevo.models.relation_grade import RelationGrade
 from drevo.models.relation_grade_scale import RelationGradeScale
 from drevo.models.friends_invite import FriendsInviteTerm
@@ -48,10 +49,10 @@ from .models import (
     InterviewResultsSendingSchedule,
     SettingsOptions,
     UserParameters,
-    ParameterCategories
+    ParameterCategories,
+    SubAnswers
 )
 from .services import send_notify_interview
-
 
 class CategoryMPTT(DraggableMPTTAdmin):
     search_fields = ["name"]
@@ -390,6 +391,18 @@ class KnowledgeGradeScaleAdmin(admin.ModelAdmin):
 admin.site.register(KnowledgeGradeScale, KnowledgeGradeScaleAdmin)
 
 
+class KnowledgeGradeColorAdmin(admin.ModelAdmin):
+    list_display = (
+        "hue",
+        "saturation",
+        "high_light",
+        "low_light",
+        "knowledge_type",
+    )
+
+admin.site.register(KnowledgeGradeColor, KnowledgeGradeColorAdmin)
+
+
 class RelationGradeScaleAdmin(admin.ModelAdmin):
     list_display = (
         "name",
@@ -498,6 +511,7 @@ class InterviewAnswerExpertProposalAdmin(admin.ModelAdmin):
         "question_link",
         "answer_link",
         "new_answer_text",
+        "incorrect_answer_explanation",
         "admin_reviewer",
         "status",
         "is_notified"
@@ -583,3 +597,13 @@ class ParameterCategoriesAdmin(admin.ModelAdmin):
     list_display = ['id', 'name']
     search_fields = ['name']
     list_display_links = ['id']
+
+
+@admin.register(SubAnswers)
+class SubAnswersAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'expert', 'question', 'answer', 'sub_answer')
+    list_display_links = ('pk', 'expert')
+    search_fields = ('question', 'answer', 'expert')
+    autocomplete_fields = ('question', 'answer')
+    save_as = True
+    save_on_top = True
